@@ -13,7 +13,7 @@ import (
 type SlackApp struct {
 	SlackURL            string           `json:"slack_url"`
 	Username            string           `json:"username"`
-	IconUrl             string           `json:"icon_url"`
+	IconURL             string           `json:"icon_url"`
 	SlackNoticeDataType *SlackNoticeData `json:"slack_notice_data"`
 }
 
@@ -95,7 +95,7 @@ func main() {
 	// Incoming Webhookに渡すBodyを作成
 	bodyJSON, err := json.Marshal(map[string]interface{}{
 		"username": data.Username,
-		"icon_url": data.IconUrl,
+		"icon_url": data.IconURL,
 		"text":     "癒し画像のお届け",
 		"blocks":   blocks,
 	})
