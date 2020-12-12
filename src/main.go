@@ -75,7 +75,7 @@ type HeaderBlock struct {
 
 func main() {
 	// ファイルから読み込む
-	dataJSON, err := ioutil.ReadFile("./data/data.json")
+	dataJSON, err := ioutil.ReadFile("../data/data.json")
 	if err != nil {
 		fmt.Println(err)
 		return
