@@ -1,23 +1,5 @@
 package slack_notice
 
-// Slack通知可変箇所のデータ構造体
-type SlackApp struct {
-	SlackURL            string           `json:"slack_url"`
-	Username            string           `json:"username"`
-	IconURL             string           `json:"icon_url"`
-	SlackNoticeDataType *SlackNoticeData `json:"slack_notice_data"`
-}
-
-// Slack投稿内容可変箇所のデータ構造体
-type SlackNoticeData struct {
-	Text             string `json:"text"`
-	HealingImageURL  string `json:"healing_image_url"`
-	HealingImageText string `json:"healing_image_text"`
-	AuthorImageURL   string `json:"author_image_url"`
-	AuthorImageText  string `json:"author_image_text"`
-	AuthorName       string `json:"author_name"`
-}
-
 // Block Kit の構造体
 type TextObject struct {
 	Type     string `json:"type"`
