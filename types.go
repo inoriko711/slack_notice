@@ -18,6 +18,13 @@ type CheckboxGroups struct {
 	InitialOptions []interface{} `json:"initial_options,omitempty"`
 	Confirm        interface{}   `json:"confirm,omitempty"`
 }
+type DatePickerElement struct {
+	Type        string      `json:"type"`
+	ActionId    string      `json:"action_id"`
+	Placeholder interface{} `json:"placeholder,omitempty"`
+	InitialDate string      `json:"initial_date,omitempty"`
+	Confirm     interface{} `json:"confirm,omitempty"`
+}
 
 type TextObject struct {
 	Type     string `json:"type"`
