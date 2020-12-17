@@ -1,0 +1,13 @@
+{
+    "slack_url": "投稿先URL",
+    "username": "Slackで表示される名前",
+    "icon_url": "Slackで表示されるiconのURL",
+    "slack_notice_data": {
+        "text": "通知本文",
+        "healing_image_url": "癒し画像URL",
+        "healing_image_text": "癒し画像タイトル",
+        "author_image_url": "投稿者画像URL",
+        "author_image_text": "投稿者画像タイトル",
+        "author_name": "投稿者名"
+    }
+}
