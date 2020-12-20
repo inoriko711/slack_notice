@@ -26,6 +26,12 @@ type DatePickerElement struct {
 	Confirm     interface{} `json:"confirm,omitempty"`
 }
 
+type ImageElement struct {
+	Type     string `json:"type"`
+	ImageURL string `json:"image_url"`
+	AltText  string `json:"alt_text"`
+}
+
 type TextObject struct {
 	Type     string `json:"type"`
 	Text     string `json:"text"`
