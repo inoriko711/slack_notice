@@ -53,6 +53,15 @@ type ExternalDataSource struct {
 	MaxSelectedItems uint          `json:"max_selected_items,omitempty"`
 }
 
+type UserList struct {
+	Type             string      `json:"type"`
+	Placeholder      interface{} `json:"placeholder"`
+	ActionID         string      `json:"action_id"`
+	InitialUsers     []string    `json:"initial_users,omitempty"`
+	Confirm          interface{} `json:"confirm,omitempty"`
+	MaxSelectedItems uint        `json:"max_selected_items,omitempty"`
+}
+
 type TextObject struct {
 	Type     string `json:"type"`
 	Text     string `json:"text"`
