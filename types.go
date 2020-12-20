@@ -26,6 +26,42 @@ type DatePickerElement struct {
 	Confirm     interface{} `json:"confirm,omitempty"`
 }
 
+type ImageElement struct {
+	Type     string `json:"type"`
+	ImageURL string `json:"image_url"`
+	AltText  string `json:"alt_text"`
+}
+
+type MultiSelectMenuElement struct {
+	Type             string        `json:"type"`
+	Placeholder      interface{}   `json:"placeholder"`
+	ActionID         string        `json:"action_id"`
+	Options          []interface{} `json:"options"`
+	OptionGroups     []interface{} `json:"option_groups,omitempty"`
+	InitialOptions   []interface{} `json:"initial_options,omitempty"`
+	Confirm          interface{}   `json:"confirm,omitempty"`
+	MaxSelectedItems uint          `json:"max_selected_items,omitempty"`
+}
+
+type ExternalDataSource struct {
+	Type             string        `json:"type"`
+	Placeholder      interface{}   `json:"placeholder"`
+	ActionID         string        `json:"action_id"`
+	MinQueryLength   int           `json:"min_query_length,omitempty"`
+	InitialOptions   []interface{} `json:"initial_options,omitempty"`
+	Confirm          interface{}   `json:"confirm,omitempty"`
+	MaxSelectedItems uint          `json:"max_selected_items,omitempty"`
+}
+
+type UserList struct {
+	Type             string      `json:"type"`
+	Placeholder      interface{} `json:"placeholder"`
+	ActionID         string      `json:"action_id"`
+	InitialUsers     []string    `json:"initial_users,omitempty"`
+	Confirm          interface{} `json:"confirm,omitempty"`
+	MaxSelectedItems uint        `json:"max_selected_items,omitempty"`
+}
+
 type TextObject struct {
 	Type     string `json:"type"`
 	Text     string `json:"text"`
