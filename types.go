@@ -32,6 +32,16 @@ type ImageElement struct {
 	AltText  string `json:"alt_text"`
 }
 
+type MultiSelectMenuElement struct {
+	Type             string        `json:"type"`
+	Placeholder      interface{}   `json:"placeholder"`
+	ActionID         string        `json:"action_id"`
+	Options          []interface{} `json:"options"`
+	OptionGroups     []interface{} `json:"option_groups,omitempty"`
+	InitialOptions   []interface{} `json:"initial_options,omitempty"`
+	Confirm          interface{}   `json:"confirm,omitempty"`
+	MaxSelectedItems uint          `json:"max_selected_items,omitempty"`
+}
 type TextObject struct {
 	Type     string `json:"type"`
 	Text     string `json:"text"`
