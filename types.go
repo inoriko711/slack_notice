@@ -62,6 +62,17 @@ type UserList struct {
 	MaxSelectedItems uint        `json:"max_selected_items,omitempty"`
 }
 
+type ConversationsList struct {
+	Type                         string      `json:"type"`
+	Placeholder                  interface{} `json:"placeholder"`
+	ActionID                     string      `json:"action_id"`
+	InitialConversations         []string    `json:"initial_conversations,omitempty"`
+	DefaultToCurrentConversation bool        `json:"default_to_current_conversation,omitempty"`
+	Confirm                      interface{} `json:"confirm,omitempty"`
+	MaxSelectedItems             uint        `json:"max_selected_items,omitempty"`
+	Filter                       interface{} `json:"filter,omitempty"`
+}
+
 type TextObject struct {
 	Type     string `json:"type"`
 	Text     string `json:"text"`
