@@ -73,6 +73,15 @@ type ConversationsList struct {
 	Filter                       interface{} `json:"filter,omitempty"`
 }
 
+type PublicChannelsList struct {
+	Type             string      `json:"type"`
+	Placeholder      interface{} `json:"placeholder"`
+	ActionID         string      `json:"action_id"`
+	InitialChannels  []string    `json:"initial_channels,omitempty"`
+	Confirm          interface{} `json:"confirm,omitempty"`
+	MaxSelectedItems uint        `json:"max_selected_items,omitempty"`
+}
+
 type TextObject struct {
 	Type     string `json:"type"`
 	Text     string `json:"text"`
