@@ -42,6 +42,17 @@ type MultiSelectMenuElement struct {
 	Confirm          interface{}   `json:"confirm,omitempty"`
 	MaxSelectedItems uint          `json:"max_selected_items,omitempty"`
 }
+
+type ExternalDataSource struct {
+	Type             string        `json:"type"`
+	Placeholder      interface{}   `json:"placeholder"`
+	ActionID         string        `json:"action_id"`
+	MinQueryLength   int           `json:"min_query_length,omitempty"`
+	InitialOptions   []interface{} `json:"initial_options,omitempty"`
+	Confirm          interface{}   `json:"confirm,omitempty"`
+	MaxSelectedItems uint          `json:"max_selected_items,omitempty"`
+}
+
 type TextObject struct {
 	Type     string `json:"type"`
 	Text     string `json:"text"`
