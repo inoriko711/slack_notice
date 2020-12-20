@@ -81,6 +81,12 @@ type PublicChannelsList struct {
 	Confirm          interface{} `json:"confirm,omitempty"`
 	MaxSelectedItems uint        `json:"max_selected_items,omitempty"`
 }
+type OverflowMenuElement struct {
+	Type     string        `json:"type"`
+	ActionID string        `json:"action_id"`
+	Options  []interface{} `json:"options"`
+	Confirm  interface{}   `json:"confirm,omitempty"`
+}
 
 type TextObject struct {
 	Type     string `json:"type"`
