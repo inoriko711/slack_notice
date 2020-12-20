@@ -1,5 +1,4 @@
 {
-    "slack_url": "投稿先URL",
     "username": "Slackで表示される名前",
     "icon_url": "Slackで表示されるiconのURL",
     "slack_notice_data": {
