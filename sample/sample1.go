@@ -7,13 +7,13 @@ import (
 	"io"
 	"io/ioutil"
 	"net/http"
+	"os"
 
 	. "github.com/inoriko711/slack_notice"
 )
 
 // Slack通知可変箇所のデータ構造体
 type SlackApp struct {
-	SlackURL            string           `json:"slack_url"`
 	Username            string           `json:"username"`
 	IconURL             string           `json:"icon_url"`
 	SlackNoticeDataType *SlackNoticeData `json:"slack_notice_data"`
@@ -64,7 +64,8 @@ func main() {
 		fmt.Print(string(bodyJSON))
 	}
 
-	resp, err := http.Post(data.SlackURL, "application/json", bytes.NewReader(bodyJSON))
+	slackURL := os.Getenv("SLACK_WEBHOOKS")
+	resp, err := http.Post(slackURL, "application/json", bytes.NewReader(bodyJSON))
 	if err != nil {
 		fmt.Println(err)
 		return
