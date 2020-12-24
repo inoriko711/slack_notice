@@ -88,6 +88,17 @@ type OverflowMenuElement struct {
 	Confirm  interface{}   `json:"confirm,omitempty"`
 }
 
+type PlainTextInputElement struct {
+	Type                 string      `json:"type"`
+	ActionID             string      `json:"action_id"`
+	Placeholder          interface{} `json:"placeholder,omitempty"`
+	InitialValue         string      `json:"initial_value,omitempty"`
+	Multiline            bool        `json:"multiline,omitempty"`
+	MinLength            uint        `json:"min_length,omitempty"`
+	MaxLength            uint        `json:"max_length,omitempty"`
+	DispatchActionConfig interface{} `json:"dispatch_action_config,omitempty"`
+}
+
 type TextObject struct {
 	Type     string `json:"type"`
 	Text     string `json:"text"`
