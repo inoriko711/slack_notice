@@ -99,6 +99,14 @@ type PlainTextInputElement struct {
 	DispatchActionConfig interface{} `json:"dispatch_action_config,omitempty"`
 }
 
+type RadioButtonGroupElement struct {
+	Type          string        `json:"type"`
+	ActionID      string        `json:"action_id"`
+	Options       []interface{} `json:"options"`
+	InitialOption interface{}   `json:"initial_option,omitempty"`
+	Confirm       interface{}   `json:"confirm,omitempty"`
+}
+
 type TextObject struct {
 	Type     string `json:"type"`
 	Text     string `json:"text"`
