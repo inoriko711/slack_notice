@@ -107,16 +107,27 @@ type RadioButtonGroupElement struct {
 	Confirm       interface{}   `json:"confirm,omitempty"`
 }
 
-type StaticOptions struct {
-	Type          string        `json:"type"`
-	Placeholder   interface{}   `json:"placeholder"`
-	ActionID      string        `json:"action_id"`
-	Options       []interface{} `json:"options"`
-	OptionGroups  []interface{} `json:"option_groups,omitempty"`
-	InitialOption interface{}   `json:"initial_option,omitempty"`
-	Confirm       interface{}   `json:"confirm,omitempty"`
-}
+// Select menu element
+type SelectMenuElement struct {
+	StaticOptions struct {
+		Type          string        `json:"type"`
+		Placeholder   interface{}   `json:"placeholder"`
+		ActionID      string        `json:"action_id"`
+		Options       []interface{} `json:"options"`
+		OptionGroups  []interface{} `json:"option_groups,omitempty"`
+		InitialOption interface{}   `json:"initial_option,omitempty"`
+		Confirm       interface{}   `json:"confirm,omitempty"`
+	}
 
+	ExternalDataSource struct {
+		Type           string      `json:"type"`
+		Placeholder    TextObject  `json:"placeholder"`
+		ActionID       string      `json:"action_id"`
+		InitialOption  interface{} `json:"initial_option,omitempty"`
+		MinQueryLength uint        `json:"min_query_length,omitempty"`
+		Confirm        interface{} `json:"confirm,omitempty"`
+	}
+}
 type TextObject struct {
 	Type     string `json:"type"`
 	Text     string `json:"text"`
