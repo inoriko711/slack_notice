@@ -149,6 +149,10 @@ type OptionGroupObject struct {
 	Options []OptionObject `json:"options"`
 }
 
+type DispatchActionConfiguration struct {
+	TriggerActionsOn []string `json:"trigger_actions_on,omitempty"`
+}
+
 // Blocks
 type ContextBlock struct {
 	Type     string        `json:"type"`
