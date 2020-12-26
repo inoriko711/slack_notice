@@ -62,6 +62,72 @@ type UserList struct {
 	MaxSelectedItems uint        `json:"max_selected_items,omitempty"`
 }
 
+type ConversationsList struct {
+	Type                         string      `json:"type"`
+	Placeholder                  interface{} `json:"placeholder"`
+	ActionID                     string      `json:"action_id"`
+	InitialConversations         []string    `json:"initial_conversations,omitempty"`
+	DefaultToCurrentConversation bool        `json:"default_to_current_conversation,omitempty"`
+	Confirm                      interface{} `json:"confirm,omitempty"`
+	MaxSelectedItems             uint        `json:"max_selected_items,omitempty"`
+	Filter                       interface{} `json:"filter,omitempty"`
+}
+
+type PublicChannelsList struct {
+	Type             string      `json:"type"`
+	Placeholder      interface{} `json:"placeholder"`
+	ActionID         string      `json:"action_id"`
+	InitialChannels  []string    `json:"initial_channels,omitempty"`
+	Confirm          interface{} `json:"confirm,omitempty"`
+	MaxSelectedItems uint        `json:"max_selected_items,omitempty"`
+}
+type OverflowMenuElement struct {
+	Type     string        `json:"type"`
+	ActionID string        `json:"action_id"`
+	Options  []interface{} `json:"options"`
+	Confirm  interface{}   `json:"confirm,omitempty"`
+}
+
+type PlainTextInputElement struct {
+	Type                 string      `json:"type"`
+	ActionID             string      `json:"action_id"`
+	Placeholder          interface{} `json:"placeholder,omitempty"`
+	InitialValue         string      `json:"initial_value,omitempty"`
+	Multiline            bool        `json:"multiline,omitempty"`
+	MinLength            uint        `json:"min_length,omitempty"`
+	MaxLength            uint        `json:"max_length,omitempty"`
+	DispatchActionConfig interface{} `json:"dispatch_action_config,omitempty"`
+}
+
+type RadioButtonGroupElement struct {
+	Type          string        `json:"type"`
+	ActionID      string        `json:"action_id"`
+	Options       []interface{} `json:"options"`
+	InitialOption interface{}   `json:"initial_option,omitempty"`
+	Confirm       interface{}   `json:"confirm,omitempty"`
+}
+
+// Select menu element
+type SelectMenuElement struct {
+	StaticOptions struct {
+		Type          string        `json:"type"`
+		Placeholder   interface{}   `json:"placeholder"`
+		ActionID      string        `json:"action_id"`
+		Options       []interface{} `json:"options"`
+		OptionGroups  []interface{} `json:"option_groups,omitempty"`
+		InitialOption interface{}   `json:"initial_option,omitempty"`
+		Confirm       interface{}   `json:"confirm,omitempty"`
+	}
+
+	ExternalDataSource struct {
+		Type           string      `json:"type"`
+		Placeholder    TextObject  `json:"placeholder"`
+		ActionID       string      `json:"action_id"`
+		InitialOption  interface{} `json:"initial_option,omitempty"`
+		MinQueryLength uint        `json:"min_query_length,omitempty"`
+		Confirm        interface{} `json:"confirm,omitempty"`
+	}
+}
 type TextObject struct {
 	Type     string `json:"type"`
 	Text     string `json:"text"`
