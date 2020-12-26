@@ -147,6 +147,15 @@ type SelectMenuElement struct {
 		MaxSelectedItems             uint        `json:"max_selected_items,omitempty"`
 		Filter                       interface{} `json:"filter,omitempty"`
 	}
+
+	PublicChannelsList struct {
+		Type             string      `json:"type"`
+		Placeholder      TextObject  `json:"placeholder"`
+		ActionID         string      `json:"action_id"`
+		InitialChannels  []string    `json:"initial_channels,omitempty"`
+		Confirm          interface{} `json:"confirm,omitempty"`
+		MaxSelectedItems uint        `json:"max_selected_items,omitempty"`
+	}
 }
 type TextObject struct {
 	Type     string `json:"type"`
