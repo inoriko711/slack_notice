@@ -153,6 +153,12 @@ type DispatchActionConfiguration struct {
 	TriggerActionsOn []string `json:"trigger_actions_on,omitempty"`
 }
 
+type FilterObjectForConversationLists struct {
+	Include                       []string `json:"include,omitempty"`
+	ExcludeExternalSharedChannels bool     `json:"exclude_external_shared_channels,omitempty"`
+	ExcludeBotUsers               bool     `json:"exclude_bot_users,omitempty"`
+}
+
 // Blocks
 type ContextBlock struct {
 	Type     string        `json:"type"`
