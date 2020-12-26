@@ -113,6 +113,14 @@ type RadioButtonGroupElement struct {
 	Confirm       interface{}   `json:"confirm,omitempty"`
 }
 
+type TimePickerElement struct {
+	Type        string      `json:"type"`
+	ActionID    string      `json:"action_id"`
+	Placeholder interface{} `json:"placeholder,omitempty"`
+	InitialTime string      `json:"initial_time,omitempty"`
+	Confirm     interface{} `json:"confirm,omitempty"`
+}
+
 // Object
 type TextObject struct {
 	Type     string `json:"type"`
