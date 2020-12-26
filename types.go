@@ -160,16 +160,35 @@ type FilterObjectForConversationLists struct {
 }
 
 // Blocks
-type ContextBlock struct {
-	Type     string        `json:"type"`
-	Elements []interface{} `json:"elements"`
-	BlockID  string        `json:"block_id,omitempty"`
-}
 type ActionBlock struct {
 	Type     string        `json:"type"`
 	Elements []interface{} `json:"elements"`
 	BlockID  string        `json:"block_id,omitempty"`
 }
+type ContextBlock struct {
+	Type     string        `json:"type"`
+	Elements []interface{} `json:"elements"`
+	BlockID  string        `json:"block_id,omitempty"`
+}
+
+type DividerBlock struct {
+	Type    string `json:"type"`
+	BlockID string `json:"block_id,omitempty"`
+}
+
+type FileBlock struct {
+	Type       string `json:"type"`
+	ExternalId string `json:"external_id"`
+	Source     string `json:"source"`
+	BlockID    string `json:"block_id,omitempty"`
+}
+
+type HeaderBlock struct {
+	Type    string      `json:"type"`
+	Text    *TextObject `json:"text"`
+	BlockID string      `json:"block_id,omitempty"`
+}
+
 type ImageBlock struct {
 	Type     string      `json:"type"`
 	ImageURL string      `json:"image_url"`
@@ -177,15 +196,21 @@ type ImageBlock struct {
 	Title    *TextObject `json:"title,omitempty"`
 	BlockID  string      `json:"block_id,omitempty"`
 }
+
+type InputBlock struct {
+	Type           string      `json:"type"`
+	Label          TextObject  `json:"label"`
+	Element        interface{} `json:"element"`
+	DispatchAction bool        `json:"dispatch_action,omitempty"`
+	BlockID        string      `json:"block_id,omitempty"`
+	Hint           *TextObject `json:"hint,omitempty"`
+	Optional       bool        `json:"optional,omitempty"`
+}
+
 type SectionBlocks struct {
 	Type      string      `json:"type"`
 	Text      *TextObject `json:"text"`
 	BlockID   string      `json:"block_id,omitempty"`
 	Fields    string      `json:"fields,omitempty"`
 	Accessory interface{} `json:"accessory,omitempty"`
-}
-type HeaderBlock struct {
-	Type    string      `json:"type"`
-	Text    *TextObject `json:"text"`
-	BlockID string      `json:"block_id,omitempty"`
 }
