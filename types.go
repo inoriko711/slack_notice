@@ -206,6 +206,7 @@ type InputBlock struct {
 	Hint           *TextObject `json:"hint,omitempty"`
 	Optional       bool        `json:"optional,omitempty"`
 }
+
 type SectionBlocks struct {
 	Type      string      `json:"type"`
 	Text      *TextObject `json:"text"`
