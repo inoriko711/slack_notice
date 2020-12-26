@@ -129,11 +129,24 @@ type TextObject struct {
 	Verbatim bool   `json:"verbatim,omitempty"`
 }
 
+type ConfirmationDialogObject struct {
+	Title   TextObject  `json:"title"`
+	Text    interface{} `json:"text"`
+	Confirm TextObject  `json:"confirm"`
+	Deny    TextObject  `json:"deny"`
+	Style   string      `json:"style,omitempty"`
+}
+
 type OptionObject struct {
 	Text        TextObject  `json:"text"`
 	Value       string      `json:"value"`
 	Description interface{} `json:"description,omitempty"`
 	URL         string      `json:"url,omitempty"`
+}
+
+type OptionGroupObject struct {
+	Label   TextObject     `json:"label"`
+	Options []OptionObject `json:"options"`
 }
 
 // Blocks
