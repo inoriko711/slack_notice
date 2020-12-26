@@ -32,7 +32,7 @@ type ImageElement struct {
 	AltText  string `json:"alt_text"`
 }
 
-// ---MultiSelectMenuElement
+// ---MultiSelectMenuElement, Select menu element
 type StaticOptions struct {
 	Type          string        `json:"type"`
 	Placeholder   interface{}   `json:"placeholder"`
@@ -57,6 +57,7 @@ type UserList struct {
 	Placeholder      TextObject  `json:"placeholder"`
 	ActionID         string      `json:"action_id"`
 	InitialUsers     []string    `json:"initial_users,omitempty"`
+	InitialUser      string      `json:"initial_user,omitempty"`
 	Confirm          interface{} `json:"confirm,omitempty"`
 	MaxSelectedItems uint        `json:"max_selected_items,omitempty"`
 }
@@ -66,19 +67,22 @@ type ConversationsList struct {
 	Placeholder                  TextObject  `json:"placeholder"`
 	ActionID                     string      `json:"action_id"`
 	InitialConversations         []string    `json:"initial_conversations,omitempty"`
+	InitialConversation          string      `json:"initial_conversation,omitempty"`
 	DefaultToCurrentConversation bool        `json:"default_to_current_conversation,omitempty"`
 	Confirm                      interface{} `json:"confirm,omitempty"`
 	MaxSelectedItems             uint        `json:"max_selected_items,omitempty"`
+	ResponseURLEnabled           bool        `json:"response_url_enabled,omitempty"`
 	Filter                       interface{} `json:"filter,omitempty"`
 }
 
 type PublicChannelsList struct {
-	Type             string      `json:"type"`
-	Placeholder      TextObject  `json:"placeholder"`
-	ActionID         string      `json:"action_id"`
-	InitialChannels  []string    `json:"initial_channels,omitempty"`
-	Confirm          interface{} `json:"confirm,omitempty"`
-	MaxSelectedItems uint        `json:"max_selected_items,omitempty"`
+	Type               string      `json:"type"`
+	Placeholder        TextObject  `json:"placeholder"`
+	ActionID           string      `json:"action_id"`
+	InitialChannels    []string    `json:"initial_channels,omitempty"`
+	Confirm            interface{} `json:"confirm,omitempty"`
+	MaxSelectedItems   uint        `json:"max_selected_items,omitempty"`
+	ResponseUrlEnabled bool        `json:"response_url_enabled,omitempty"`
 }
 
 // ---
@@ -109,6 +113,7 @@ type RadioButtonGroupElement struct {
 	Confirm       interface{}   `json:"confirm,omitempty"`
 }
 
+// Object
 type TextObject struct {
 	Type     string `json:"type"`
 	Text     string `json:"text"`
