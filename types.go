@@ -127,6 +127,15 @@ type SelectMenuElement struct {
 		MinQueryLength uint        `json:"min_query_length,omitempty"`
 		Confirm        interface{} `json:"confirm,omitempty"`
 	}
+
+	UserList struct {
+		Type             string      `json:"type"`
+		Placeholder      TextObject  `json:"placeholder"`
+		ActionID         string      `json:"action_id"`
+		InitialUsers     []string    `json:"initial_users,omitempty"`
+		Confirm          interface{} `json:"confirm,omitempty"`
+		MaxSelectedItems uint        `json:"max_selected_items,omitempty"`
+	}
 }
 type TextObject struct {
 	Type     string `json:"type"`
