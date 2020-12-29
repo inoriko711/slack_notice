@@ -2,13 +2,13 @@ package slack_notice
 
 // Element の構造体
 type ButtonElement struct {
-	Type     string      `json:"type"`
-	Text     *TextObject `json:"text"`
-	ActionId string      `json:"action_id,omitempty"`
-	URL      string      `json:"url,omitempty"`
-	Value    string      `json:"value,omitempty"`
-	Style    string      `json:"style,omitempty"`
-	Confirm  interface{} `json:"confirm,omitempty"`
+	Type     string                    `json:"type"`
+	Text     *TextObject               `json:"text"`
+	ActionId string                    `json:"action_id,omitempty"`
+	URL      string                    `json:"url,omitempty"`
+	Value    string                    `json:"value,omitempty"`
+	Style    string                    `json:"style,omitempty"`
+	Confirm  *ConfirmationDialogObject `json:"confirm,omitempty"`
 }
 
 func NewButtonElement() *ButtonElement {
@@ -35,11 +35,17 @@ func NewCheckboxGroups() *CheckboxGroups {
 }
 
 type DatePickerElement struct {
-	Type        string      `json:"type"`
-	ActionId    string      `json:"action_id"`
-	Placeholder interface{} `json:"placeholder,omitempty"`
-	InitialDate string      `json:"initial_date,omitempty"`
-	Confirm     interface{} `json:"confirm,omitempty"`
+	Type        string                    `json:"type"`
+	ActionId    string                    `json:"action_id"`
+	Placeholder *TextObject               `json:"placeholder,omitempty"`
+	InitialDate string                    `json:"initial_date,omitempty"`
+	Confirm     *ConfirmationDialogObject `json:"confirm,omitempty"`
+}
+
+func NewDatePickerElement() *DatePickerElement {
+	return &DatePickerElement{
+		Type: "datepicker",
+	}
 }
 
 type ImageElement struct {
@@ -48,24 +54,33 @@ type ImageElement struct {
 	AltText  string `json:"alt_text"`
 }
 
+func NewImageElement() *ImageElement {
+	return &ImageElement{
+		Type: "image",
+	}
+}
+
 // ---MultiSelectMenuElement, Select menu element
 type StaticOptions struct {
-	Type          string        `json:"type"`
-	Placeholder   interface{}   `json:"placeholder"`
-	ActionID      string        `json:"action_id"`
-	Options       []interface{} `json:"options"`
-	OptionGroups  []interface{} `json:"option_groups,omitempty"`
-	InitialOption interface{}   `json:"initial_option,omitempty"`
-	Confirm       interface{}   `json:"confirm,omitempty"`
+	Type             string                    `json:"type"`
+	Placeholder      *TextObject               `json:"placeholder"`
+	ActionID         string                    `json:"action_id"`
+	Options          []*OptionObject           `json:"options"`
+	OptionGroups     []*OptionObject           `json:"option_groups,omitempty"`
+	InitialOption    interface{}               `json:"initial_option,omitempty"`
+	InitialOptions   []*OptionObject           `json:"initial_options,omitempty"`
+	Confirm          *ConfirmationDialogObject `json:"confirm,omitempty"`
+	MaxSelectedItems uint                      `json:"max_selected_items,omitempty"`
 }
 
 type ExternalDataSource struct {
-	Type           string      `json:"type"`
-	Placeholder    TextObject  `json:"placeholder"`
-	ActionID       string      `json:"action_id"`
-	InitialOption  interface{} `json:"initial_option,omitempty"`
-	MinQueryLength uint        `json:"min_query_length,omitempty"`
-	Confirm        interface{} `json:"confirm,omitempty"`
+	Type             string                    `json:"type"`
+	Placeholder      TextObject                `json:"placeholder"`
+	ActionID         string                    `json:"action_id"`
+	MinQueryLength   uint                      `json:"min_query_length,omitempty"`
+	InitialOption    *OptionObject             `json:"initial_option,omitempty"`
+	Confirm          *ConfirmationDialogObject `json:"confirm,omitempty"`
+	MaxSelectedItems uint                      `json:"max_selected_items,omitempty"`
 }
 
 type UserList struct {

@@ -29,25 +29,25 @@ func main() {
 					Type: "plain_text",
 					Text: "Select an item",
 				},
-				Options: []interface{}{
-					&OptionObject{
+				Options: []*OptionObject{
+					{
 						Text: TextObject{
 							Type: "plain_text",
-							Text: "*this is plain_text text*",
+							Text: "Item1",
 						},
 						Value: "value-0",
 					},
-					&OptionObject{
+					{
 						Text: TextObject{
 							Type: "plain_text",
-							Text: "*this is plain_text text*",
+							Text: "Item2",
 						},
 						Value: "value-1",
 					},
-					&OptionObject{
+					{
 						Text: TextObject{
 							Type: "plain_text",
-							Text: "*this is plain_text text*",
+							Text: "Item3",
 						},
 						Value: "value-2",
 					},
