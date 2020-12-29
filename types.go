@@ -62,13 +62,15 @@ func NewImageElement() *ImageElement {
 
 // ---MultiSelectMenuElement, Select menu element
 type StaticOptions struct {
-	Type          string        `json:"type"`
-	Placeholder   interface{}   `json:"placeholder"`
-	ActionID      string        `json:"action_id"`
-	Options       []interface{} `json:"options"`
-	OptionGroups  []interface{} `json:"option_groups,omitempty"`
-	InitialOption interface{}   `json:"initial_option,omitempty"`
-	Confirm       interface{}   `json:"confirm,omitempty"`
+	Type             string                    `json:"type"`
+	Placeholder      *TextObject               `json:"placeholder"`
+	ActionID         string                    `json:"action_id"`
+	Options          []*OptionObject           `json:"options"`
+	OptionGroups     []*OptionObject           `json:"option_groups,omitempty"`
+	InitialOption    interface{}               `json:"initial_option,omitempty"`
+	InitialOptions   []*OptionObject           `json:"initial_options,omitempty"`
+	Confirm          *ConfirmationDialogObject `json:"confirm,omitempty"`
+	MaxSelectedItems uint                      `json:"max_selected_items,omitempty"`
 }
 
 type ExternalDataSource struct {
