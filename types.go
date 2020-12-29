@@ -74,12 +74,13 @@ type StaticOptions struct {
 }
 
 type ExternalDataSource struct {
-	Type           string      `json:"type"`
-	Placeholder    TextObject  `json:"placeholder"`
-	ActionID       string      `json:"action_id"`
-	InitialOption  interface{} `json:"initial_option,omitempty"`
-	MinQueryLength uint        `json:"min_query_length,omitempty"`
-	Confirm        interface{} `json:"confirm,omitempty"`
+	Type             string                    `json:"type"`
+	Placeholder      TextObject                `json:"placeholder"`
+	ActionID         string                    `json:"action_id"`
+	MinQueryLength   uint                      `json:"min_query_length,omitempty"`
+	InitialOption    *OptionObject             `json:"initial_option,omitempty"`
+	Confirm          *ConfirmationDialogObject `json:"confirm,omitempty"`
+	MaxSelectedItems uint                      `json:"max_selected_items,omitempty"`
 }
 
 type UserList struct {
