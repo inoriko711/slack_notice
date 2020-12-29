@@ -1,9 +1,9 @@
 package slack_notice
 
-// Block Elements の構造体
+// Element の構造体
 type ButtonElement struct {
 	Type     string      `json:"type"`
-	Text     interface{} `json:"text"`
+	Text     *TextObject `json:"text"`
 	ActionId string      `json:"action_id,omitempty"`
 	URL      string      `json:"url,omitempty"`
 	Value    string      `json:"value,omitempty"`
@@ -11,13 +11,29 @@ type ButtonElement struct {
 	Confirm  interface{} `json:"confirm,omitempty"`
 }
 
-type CheckboxGroups struct {
-	Type           string        `json:"type"`
-	ActionId       string        `json:"action_id"`
-	Options        []interface{} `json:"options"`
-	InitialOptions []interface{} `json:"initial_options,omitempty"`
-	Confirm        interface{}   `json:"confirm,omitempty"`
+func NewButtonElement() *ButtonElement {
+	return &ButtonElement{
+		Type: "button",
+		Text: &TextObject{
+			Type: "plain_text",
+		},
+	}
 }
+
+type CheckboxGroups struct {
+	Type           string                    `json:"type"`
+	ActionId       string                    `json:"action_id"`
+	Options        []*OptionObject           `json:"options"`
+	InitialOptions []*OptionObject           `json:"initial_options,omitempty"`
+	Confirm        *ConfirmationDialogObject `json:"confirm,omitempty"`
+}
+
+func NewCheckboxGroups() *CheckboxGroups {
+	return &CheckboxGroups{
+		Type: "checkboxes",
+	}
+}
+
 type DatePickerElement struct {
 	Type        string      `json:"type"`
 	ActionId    string      `json:"action_id"`
