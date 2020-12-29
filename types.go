@@ -2,13 +2,13 @@ package slack_notice
 
 // Element の構造体
 type ButtonElement struct {
-	Type     string      `json:"type"`
-	Text     *TextObject `json:"text"`
-	ActionId string      `json:"action_id,omitempty"`
-	URL      string      `json:"url,omitempty"`
-	Value    string      `json:"value,omitempty"`
-	Style    string      `json:"style,omitempty"`
-	Confirm  interface{} `json:"confirm,omitempty"`
+	Type     string                    `json:"type"`
+	Text     *TextObject               `json:"text"`
+	ActionId string                    `json:"action_id,omitempty"`
+	URL      string                    `json:"url,omitempty"`
+	Value    string                    `json:"value,omitempty"`
+	Style    string                    `json:"style,omitempty"`
+	Confirm  *ConfirmationDialogObject `json:"confirm,omitempty"`
 }
 
 func NewButtonElement() *ButtonElement {
