@@ -35,11 +35,17 @@ func NewCheckboxGroups() *CheckboxGroups {
 }
 
 type DatePickerElement struct {
-	Type        string      `json:"type"`
-	ActionId    string      `json:"action_id"`
-	Placeholder interface{} `json:"placeholder,omitempty"`
-	InitialDate string      `json:"initial_date,omitempty"`
-	Confirm     interface{} `json:"confirm,omitempty"`
+	Type        string                    `json:"type"`
+	ActionId    string                    `json:"action_id"`
+	Placeholder *TextObject               `json:"placeholder,omitempty"`
+	InitialDate string                    `json:"initial_date,omitempty"`
+	Confirm     *ConfirmationDialogObject `json:"confirm,omitempty"`
+}
+
+func NewDatePickerElement() *DatePickerElement {
+	return &DatePickerElement{
+		Type: "datepicker",
+	}
 }
 
 type ImageElement struct {
