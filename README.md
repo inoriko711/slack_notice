@@ -1,9 +1,9 @@
 # slack_notice
-- このリポジトリはSlack Block Kitの要件を満たす構造体を提供します
+- このリポジトリは[Slack Block Kit](https://api.slack.com/block-kit)の要件を満たす構造体を提供します
 
 # 構成
 - types.go
-  - BlocksとBlock Elementsの要件を満たす構造体を提供しております
+  - [Blocks](https://api.slack.com/reference/block-kit/blocks)と[Block Elements](https://api.slack.com/reference/block-kit/block-elements)、[Composition objects](https://api.slack.com/reference/block-kit/composition-objects)の要件を満たす構造体を提供しております
 
 - sample
   - 構造体の使用例になります
