@@ -3,12 +3,21 @@ package slack_notice
 // Block Elements の構造体
 type ButtonElement struct {
 	Type     string      `json:"type"`
-	Text     interface{} `json:"text"`
+	Text     *TextObject `json:"text"`
 	ActionId string      `json:"action_id,omitempty"`
 	URL      string      `json:"url,omitempty"`
 	Value    string      `json:"value,omitempty"`
 	Style    string      `json:"style,omitempty"`
 	Confirm  interface{} `json:"confirm,omitempty"`
+}
+
+func NewButtonElement() *ButtonElement {
+	return &ButtonElement{
+		Type: "button",
+		Text: &TextObject{
+			Type: "plain_text",
+		},
+	}
 }
 
 type CheckboxGroups struct {
