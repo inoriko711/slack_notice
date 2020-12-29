@@ -54,6 +54,12 @@ type ImageElement struct {
 	AltText  string `json:"alt_text"`
 }
 
+func NewImageElement() *ImageElement {
+	return &ImageElement{
+		Type: "image",
+	}
+}
+
 // ---MultiSelectMenuElement, Select menu element
 type StaticOptions struct {
 	Type          string        `json:"type"`
