@@ -163,11 +163,17 @@ func NewRadioButtonGroupElement() *RadioButtonGroupElement {
 }
 
 type TimePickerElement struct {
-	Type        string      `json:"type"`
-	ActionID    string      `json:"action_id"`
-	Placeholder interface{} `json:"placeholder,omitempty"`
-	InitialTime string      `json:"initial_time,omitempty"`
-	Confirm     interface{} `json:"confirm,omitempty"`
+	Type        string                    `json:"type"`
+	ActionID    string                    `json:"action_id"`
+	Placeholder *TextObject               `json:"placeholder,omitempty"`
+	InitialTime string                    `json:"initial_time,omitempty"`
+	Confirm     *ConfirmationDialogObject `json:"confirm,omitempty"`
+}
+
+func NewTimePickerElement() *TimePickerElement {
+	return &TimePickerElement{
+		Type: "timepicker",
+	}
 }
 
 // Object
