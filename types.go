@@ -185,23 +185,23 @@ type TextObject struct {
 }
 
 type ConfirmationDialogObject struct {
-	Title   TextObject  `json:"title"`
-	Text    interface{} `json:"text"`
-	Confirm TextObject  `json:"confirm"`
-	Deny    TextObject  `json:"deny"`
+	Title   *TextObject `json:"title"`
+	Text    *TextObject `json:"text"`
+	Confirm *TextObject `json:"confirm"`
+	Deny    *TextObject `json:"deny"`
 	Style   string      `json:"style,omitempty"`
 }
 
 type OptionObject struct {
-	Text        TextObject  `json:"text"`
+	Text        *TextObject `json:"text"`
 	Value       string      `json:"value"`
-	Description interface{} `json:"description,omitempty"`
+	Description *TextObject `json:"description,omitempty"`
 	URL         string      `json:"url,omitempty"`
 }
 
 type OptionGroupObject struct {
-	Label   TextObject     `json:"label"`
-	Options []OptionObject `json:"options"`
+	Label   *TextObject     `json:"label"`
+	Options []*OptionObject `json:"options"`
 }
 
 type DispatchActionConfiguration struct {
