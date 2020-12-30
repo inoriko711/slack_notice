@@ -119,10 +119,16 @@ type PublicChannelsList struct {
 // ---
 
 type OverflowMenuElement struct {
-	Type     string        `json:"type"`
-	ActionID string        `json:"action_id"`
-	Options  []interface{} `json:"options"`
-	Confirm  interface{}   `json:"confirm,omitempty"`
+	Type     string                    `json:"type"`
+	ActionID string                    `json:"action_id"`
+	Options  []*OptionObject           `json:"options"`
+	Confirm  *ConfirmationDialogObject `json:"confirm,omitempty"`
+}
+
+func NewOverflowMenuElement() *OverflowMenuElement {
+	return &OverflowMenuElement{
+		Type: "overflow",
+	}
 }
 
 type PlainTextInputElement struct {
