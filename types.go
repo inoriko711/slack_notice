@@ -149,11 +149,17 @@ func NewPlainTextInputElement() *PlainTextInputElement {
 }
 
 type RadioButtonGroupElement struct {
-	Type          string        `json:"type"`
-	ActionID      string        `json:"action_id"`
-	Options       []interface{} `json:"options"`
-	InitialOption interface{}   `json:"initial_option,omitempty"`
-	Confirm       interface{}   `json:"confirm,omitempty"`
+	Type          string                    `json:"type"`
+	ActionID      string                    `json:"action_id"`
+	Options       []*OptionObject           `json:"options"`
+	InitialOption *OptionObject             `json:"initial_option,omitempty"`
+	Confirm       *ConfirmationDialogObject `json:"confirm,omitempty"`
+}
+
+func NewRadioButtonGroupElement() *RadioButtonGroupElement {
+	return &RadioButtonGroupElement{
+		Type: "radio_buttons",
+	}
 }
 
 type TimePickerElement struct {
