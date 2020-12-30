@@ -132,14 +132,20 @@ func NewOverflowMenuElement() *OverflowMenuElement {
 }
 
 type PlainTextInputElement struct {
-	Type                 string      `json:"type"`
-	ActionID             string      `json:"action_id"`
-	Placeholder          interface{} `json:"placeholder,omitempty"`
-	InitialValue         string      `json:"initial_value,omitempty"`
-	Multiline            bool        `json:"multiline,omitempty"`
-	MinLength            uint        `json:"min_length,omitempty"`
-	MaxLength            uint        `json:"max_length,omitempty"`
-	DispatchActionConfig interface{} `json:"dispatch_action_config,omitempty"`
+	Type                 string                       `json:"type"`
+	ActionID             string                       `json:"action_id"`
+	Placeholder          *TextObject                  `json:"placeholder,omitempty"`
+	InitialValue         string                       `json:"initial_value,omitempty"`
+	Multiline            bool                         `json:"multiline,omitempty"`
+	MinLength            uint                         `json:"min_length,omitempty"`
+	MaxLength            uint                         `json:"max_length,omitempty"`
+	DispatchActionConfig *DispatchActionConfiguration `json:"dispatch_action_config,omitempty"`
+}
+
+func NewPlainTextInputElement() *PlainTextInputElement {
+	return &PlainTextInputElement{
+		Type: "plain_text_input",
+	}
 }
 
 type RadioButtonGroupElement struct {
