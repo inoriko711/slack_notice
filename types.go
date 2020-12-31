@@ -119,37 +119,61 @@ type PublicChannelsList struct {
 // ---
 
 type OverflowMenuElement struct {
-	Type     string        `json:"type"`
-	ActionID string        `json:"action_id"`
-	Options  []interface{} `json:"options"`
-	Confirm  interface{}   `json:"confirm,omitempty"`
+	Type     string                    `json:"type"`
+	ActionID string                    `json:"action_id"`
+	Options  []*OptionObject           `json:"options"`
+	Confirm  *ConfirmationDialogObject `json:"confirm,omitempty"`
+}
+
+func NewOverflowMenuElement() *OverflowMenuElement {
+	return &OverflowMenuElement{
+		Type: "overflow",
+	}
 }
 
 type PlainTextInputElement struct {
-	Type                 string      `json:"type"`
-	ActionID             string      `json:"action_id"`
-	Placeholder          interface{} `json:"placeholder,omitempty"`
-	InitialValue         string      `json:"initial_value,omitempty"`
-	Multiline            bool        `json:"multiline,omitempty"`
-	MinLength            uint        `json:"min_length,omitempty"`
-	MaxLength            uint        `json:"max_length,omitempty"`
-	DispatchActionConfig interface{} `json:"dispatch_action_config,omitempty"`
+	Type                 string                       `json:"type"`
+	ActionID             string                       `json:"action_id"`
+	Placeholder          *TextObject                  `json:"placeholder,omitempty"`
+	InitialValue         string                       `json:"initial_value,omitempty"`
+	Multiline            bool                         `json:"multiline,omitempty"`
+	MinLength            uint                         `json:"min_length,omitempty"`
+	MaxLength            uint                         `json:"max_length,omitempty"`
+	DispatchActionConfig *DispatchActionConfiguration `json:"dispatch_action_config,omitempty"`
+}
+
+func NewPlainTextInputElement() *PlainTextInputElement {
+	return &PlainTextInputElement{
+		Type: "plain_text_input",
+	}
 }
 
 type RadioButtonGroupElement struct {
-	Type          string        `json:"type"`
-	ActionID      string        `json:"action_id"`
-	Options       []interface{} `json:"options"`
-	InitialOption interface{}   `json:"initial_option,omitempty"`
-	Confirm       interface{}   `json:"confirm,omitempty"`
+	Type          string                    `json:"type"`
+	ActionID      string                    `json:"action_id"`
+	Options       []*OptionObject           `json:"options"`
+	InitialOption *OptionObject             `json:"initial_option,omitempty"`
+	Confirm       *ConfirmationDialogObject `json:"confirm,omitempty"`
+}
+
+func NewRadioButtonGroupElement() *RadioButtonGroupElement {
+	return &RadioButtonGroupElement{
+		Type: "radio_buttons",
+	}
 }
 
 type TimePickerElement struct {
-	Type        string      `json:"type"`
-	ActionID    string      `json:"action_id"`
-	Placeholder interface{} `json:"placeholder,omitempty"`
-	InitialTime string      `json:"initial_time,omitempty"`
-	Confirm     interface{} `json:"confirm,omitempty"`
+	Type        string                    `json:"type"`
+	ActionID    string                    `json:"action_id"`
+	Placeholder *TextObject               `json:"placeholder,omitempty"`
+	InitialTime string                    `json:"initial_time,omitempty"`
+	Confirm     *ConfirmationDialogObject `json:"confirm,omitempty"`
+}
+
+func NewTimePickerElement() *TimePickerElement {
+	return &TimePickerElement{
+		Type: "timepicker",
+	}
 }
 
 // Object
@@ -161,23 +185,23 @@ type TextObject struct {
 }
 
 type ConfirmationDialogObject struct {
-	Title   TextObject  `json:"title"`
-	Text    interface{} `json:"text"`
-	Confirm TextObject  `json:"confirm"`
-	Deny    TextObject  `json:"deny"`
+	Title   *TextObject `json:"title"`
+	Text    *TextObject `json:"text"`
+	Confirm *TextObject `json:"confirm"`
+	Deny    *TextObject `json:"deny"`
 	Style   string      `json:"style,omitempty"`
 }
 
 type OptionObject struct {
-	Text        TextObject  `json:"text"`
+	Text        *TextObject `json:"text"`
 	Value       string      `json:"value"`
-	Description interface{} `json:"description,omitempty"`
+	Description *TextObject `json:"description,omitempty"`
 	URL         string      `json:"url,omitempty"`
 }
 
 type OptionGroupObject struct {
-	Label   TextObject     `json:"label"`
-	Options []OptionObject `json:"options"`
+	Label   *TextObject     `json:"label"`
+	Options []*OptionObject `json:"options"`
 }
 
 type DispatchActionConfiguration struct {
