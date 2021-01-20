@@ -87,7 +87,7 @@ func buildBlocks(data SlackNoticeData) []interface{} {
 				Text: ":star2:癒しタイム:star2:",
 			},
 		},
-		&SectionBlocks{
+		&SectionBlock{
 			Type: "section",
 			Text: &TextObject{
 				Type: "mrkdwn",

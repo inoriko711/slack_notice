@@ -15,7 +15,7 @@ import (
 func main() {
 
 	blocks := []interface{}{
-		&SectionBlocks{
+		&SectionBlock{
 			Type:    "section",
 			BlockID: "section678",
 			Text: &TextObject{
