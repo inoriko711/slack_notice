@@ -262,7 +262,7 @@ type InputBlock struct {
 	Optional       bool        `json:"optional,omitempty"`
 }
 
-type SectionBlocks struct {
+type SectionBlock struct {
 	Type      string      `json:"type"`
 	Text      *TextObject `json:"text"`
 	BlockID   string      `json:"block_id,omitempty"`
