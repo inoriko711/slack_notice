@@ -263,9 +263,9 @@ type InputBlock struct {
 }
 
 type SectionBlock struct {
-	Type      string      `json:"type"`
-	Text      *TextObject `json:"text"`
-	BlockID   string      `json:"block_id,omitempty"`
-	Fields    string      `json:"fields,omitempty"`
-	Accessory interface{} `json:"accessory,omitempty"`
+	Type      string        `json:"type"`
+	Text      *TextObject   `json:"text"`
+	BlockID   string        `json:"block_id,omitempty"`
+	Fields    []*TextObject `json:"fields,omitempty"`
+	Accessory interface{}   `json:"accessory,omitempty"`
 }
