@@ -31,21 +31,21 @@ func main() {
 				},
 				Options: []*OptionObject{
 					{
-						Text: TextObject{
+						Text: &TextObject{
 							Type: "plain_text",
 							Text: "Item1",
 						},
 						Value: "value-0",
 					},
 					{
-						Text: TextObject{
+						Text: &TextObject{
 							Type: "plain_text",
 							Text: "Item2",
 						},
 						Value: "value-1",
 					},
 					{
-						Text: TextObject{
+						Text: &TextObject{
 							Type: "plain_text",
 							Text: "Item3",
 						},
