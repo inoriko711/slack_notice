@@ -55,7 +55,7 @@ func main() {
 			},
 		},
 	}
-	blocks = SetDividerBlock(blocks, nil)
+	blocks = SetDividerBlock(blocks, "")
 
 	bodyJSON, err := json.Marshal(map[string]interface{}{
 		"username": "test",

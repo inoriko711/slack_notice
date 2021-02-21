@@ -5,12 +5,12 @@ type DividerBlock struct {
 	BlockID string `json:"block_id,omitempty"`
 }
 
-func SetDividerBlock(blocks []interface{}, blockID *string) []interface{} {
+func SetDividerBlock(blocks []interface{}, blockID string) []interface{} {
 	var dividerBlock DividerBlock
 
 	dividerBlock.Type = "divider"
-	if blockID != nil {
-		dividerBlock.BlockID = *blockID
+	if blockID != "" {
+		dividerBlock.BlockID = blockID
 	}
 
 	blocks = append(blocks, dividerBlock)
