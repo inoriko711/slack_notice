@@ -55,6 +55,7 @@ func main() {
 			},
 		},
 	}
+	blocks = SetDividerBlock(blocks, nil)
 
 	bodyJSON, err := json.Marshal(map[string]interface{}{
 		"username": "test",
@@ -70,6 +71,7 @@ func main() {
 		fmt.Println(string(bodyJSON))
 	}
 
+	// 環境変数に設定しているSlackのWebhook URLを取得する
 	slackURL := os.Getenv("SLACK_WEBHOOKS")
 	resp, err := http.Post(slackURL, "application/json", bytes.NewReader(bodyJSON))
 	if err != nil {

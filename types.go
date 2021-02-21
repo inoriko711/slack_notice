@@ -226,11 +226,6 @@ type ContextBlock struct {
 	BlockID  string        `json:"block_id,omitempty"`
 }
 
-type DividerBlock struct {
-	Type    string `json:"type"`
-	BlockID string `json:"block_id,omitempty"`
-}
-
 type FileBlock struct {
 	Type       string `json:"type"`
 	ExternalId string `json:"external_id"`
