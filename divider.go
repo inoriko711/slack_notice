@@ -6,13 +6,17 @@ type DividerBlock struct {
 }
 
 func SetDividerBlock(blocks []interface{}, blockID string) []interface{} {
-	var dividerBlock DividerBlock
+	dividerBlock := NewDividerBlock(blockID)
 
+	blocks = append(blocks, dividerBlock)
+	return blocks
+}
+
+func NewDividerBlock(blockID string) *DividerBlock {
+	dividerBlock := new(DividerBlock)
 	dividerBlock.Type = "divider"
 	if blockID != "" {
 		dividerBlock.BlockID = blockID
 	}
-
-	blocks = append(blocks, dividerBlock)
-	return blocks
+	return dividerBlock
 }
