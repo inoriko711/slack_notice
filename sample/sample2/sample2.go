@@ -13,6 +13,11 @@ import (
 )
 
 func main() {
+	item1TO, err := NewTextObject("Item1", false, false, false)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
 	blocks := []interface{}{
 		&SectionBlock{
@@ -30,11 +35,9 @@ func main() {
 					Text: "Select an item",
 				},
 				Options: []*OptionObject{
+
 					{
-						Text: &TextObject{
-							Type: "plain_text",
-							Text: "Item1",
-						},
+						Text:  item1TO,
 						Value: "value-0",
 					},
 					{

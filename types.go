@@ -177,13 +177,6 @@ func NewTimePickerElement() *TimePickerElement {
 }
 
 // Object
-type TextObject struct {
-	Type     string `json:"type"`
-	Text     string `json:"text"`
-	Emoji    bool   `json:"emoji,omitempty"`
-	Verbatim bool   `json:"verbatim,omitempty"`
-}
-
 type ConfirmationDialogObject struct {
 	Title   *TextObject `json:"title"`
 	Text    *TextObject `json:"text"`
