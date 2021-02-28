@@ -13,11 +13,7 @@ import (
 )
 
 func main() {
-	item1TO, err := NewTextObject("Item1", false, false, false)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+	item1TO := NewTextObject("Item1", false, false, false)
 
 	blocks := []interface{}{
 		&SectionBlock{
@@ -35,7 +31,6 @@ func main() {
 					Text: "Select an item",
 				},
 				Options: []*OptionObject{
-
 					{
 						Text:  item1TO,
 						Value: "value-0",
@@ -59,7 +54,13 @@ func main() {
 		},
 	}
 	blocks = SetDividerBlock(blocks, "")
-
+	blocks = SetImageBlock(
+		blocks,
+		"https://3.bp.blogspot.com/-d2L3hyx3JTU/WzC92mKYt1I/AAAAAAABM8Y/s76v5v1piCMN0eKy9jUEQlLHhCQcfmHMwCLcBGAs/s800/omatsuri_hashigonori.png",
+		"はしご乗りのイラスト",
+		"",
+		NewTextObject("いらすとや", false, false, false),
+	)
 	bodyJSON, err := json.Marshal(map[string]interface{}{
 		"username": "test",
 		"text":     "sample",
