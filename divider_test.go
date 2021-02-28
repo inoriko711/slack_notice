@@ -19,7 +19,7 @@ func TestSetDividerBlock(t *testing.T) {
 			t.Fatalf("want %s, got %s", want, got)
 		}
 	})
-	t.Run("block id is ", func(t *testing.T) {
+	t.Run("with block id", func(t *testing.T) {
 		want := "[{\"type\":\"divider\",\"block_id\":\"divider1\"}]"
 
 		dividerBlock := SetDividerBlock(nil, "divider1")
@@ -32,4 +32,34 @@ func TestSetDividerBlock(t *testing.T) {
 			t.Fatalf("want %s, got %s", want, got)
 		}
 	})
+}
+
+func TestNewDividerBlock(t *testing.T) {
+	t.Run("without block id", func(t *testing.T) {
+		want := "{\"type\":\"divider\"}"
+
+		divider := NewDividerBlock("")
+		got, err := json.Marshal(divider)
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		if want != string(got) {
+			t.Fatalf("want %s, got %s", want, got)
+		}
+	})
+	t.Run("with block id", func(t *testing.T) {
+		want := "{\"type\":\"divider\",\"block_id\":\"divider1\"}"
+
+		divider := NewDividerBlock("divider1")
+		got, err := json.Marshal(divider)
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		if want != string(got) {
+			t.Fatalf("want %s, got %s", want, got)
+		}
+	})
+
 }
