@@ -232,14 +232,6 @@ type HeaderBlock struct {
 	BlockID string      `json:"block_id,omitempty"`
 }
 
-type ImageBlock struct {
-	Type     string      `json:"type"`
-	ImageURL string      `json:"image_url"`
-	AltText  string      `json:"alt_text"`
-	Title    *TextObject `json:"title,omitempty"`
-	BlockID  string      `json:"block_id,omitempty"`
-}
-
 type InputBlock struct {
 	Type           string      `json:"type"`
 	Label          TextObject  `json:"label"`
