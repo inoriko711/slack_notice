@@ -226,12 +226,6 @@ type FileBlock struct {
 	BlockID    string `json:"block_id,omitempty"`
 }
 
-type HeaderBlock struct {
-	Type    string      `json:"type"`
-	Text    *TextObject `json:"text"`
-	BlockID string      `json:"block_id,omitempty"`
-}
-
 type InputBlock struct {
 	Type           string      `json:"type"`
 	Label          TextObject  `json:"label"`
