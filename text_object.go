@@ -7,11 +7,11 @@ type TextObject struct {
 	Verbatim bool   `json:"verbatim,omitempty"`
 }
 
-func SetTextObject(blocks []interface{}, text string, isMarkdown, isEmoji, isVerbatim bool) []interface{} {
-	to := NewTextObject(text, isMarkdown, isEmoji, isVerbatim)
-	blocks = append(blocks, to)
-	return blocks
-}
+// func SetTextObject(blocks []interface{}, text string, isMarkdown, isEmoji, isVerbatim bool) []interface{} {
+// 	to := NewTextObject(text, isMarkdown, isEmoji, isVerbatim)
+// 	blocks = append(blocks, to)
+// 	return blocks
+// }
 
 func NewTextObject(text string, isMarkdown, isEmoji, isVerbatim bool) *TextObject {
 	if text == "" {
