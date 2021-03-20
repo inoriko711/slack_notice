@@ -13,6 +13,7 @@ import (
 )
 
 func main() {
+	item1TO := NewTextObject("Item1", false, false, false)
 
 	blocks := []interface{}{
 		&SectionBlock{
@@ -31,10 +32,7 @@ func main() {
 				},
 				Options: []*OptionObject{
 					{
-						Text: &TextObject{
-							Type: "plain_text",
-							Text: "Item1",
-						},
+						Text:  item1TO,
 						Value: "value-0",
 					},
 					{
@@ -55,7 +53,14 @@ func main() {
 			},
 		},
 	}
-
+	blocks = SetDividerBlock(blocks, "")
+	blocks = SetImageBlock(
+		blocks,
+		"https://3.bp.blogspot.com/-d2L3hyx3JTU/WzC92mKYt1I/AAAAAAABM8Y/s76v5v1piCMN0eKy9jUEQlLHhCQcfmHMwCLcBGAs/s800/omatsuri_hashigonori.png",
+		"はしご乗りのイラスト",
+		"",
+		NewTextObject("いらすとや", false, false, false),
+	)
 	bodyJSON, err := json.Marshal(map[string]interface{}{
 		"username": "test",
 		"text":     "sample",
@@ -70,6 +75,7 @@ func main() {
 		fmt.Println(string(bodyJSON))
 	}
 
+	// 環境変数に設定しているSlackのWebhook URLを取得する
 	slackURL := os.Getenv("SLACK_WEBHOOKS")
 	resp, err := http.Post(slackURL, "application/json", bytes.NewReader(bodyJSON))
 	if err != nil {

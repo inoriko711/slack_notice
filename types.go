@@ -177,13 +177,6 @@ func NewTimePickerElement() *TimePickerElement {
 }
 
 // Object
-type TextObject struct {
-	Type     string `json:"type"`
-	Text     string `json:"text"`
-	Emoji    bool   `json:"emoji,omitempty"`
-	Verbatim bool   `json:"verbatim,omitempty"`
-}
-
 type ConfirmationDialogObject struct {
 	Title   *TextObject `json:"title"`
 	Text    *TextObject `json:"text"`
@@ -226,30 +219,11 @@ type ContextBlock struct {
 	BlockID  string        `json:"block_id,omitempty"`
 }
 
-type DividerBlock struct {
-	Type    string `json:"type"`
-	BlockID string `json:"block_id,omitempty"`
-}
-
 type FileBlock struct {
 	Type       string `json:"type"`
 	ExternalId string `json:"external_id"`
 	Source     string `json:"source"`
 	BlockID    string `json:"block_id,omitempty"`
-}
-
-type HeaderBlock struct {
-	Type    string      `json:"type"`
-	Text    *TextObject `json:"text"`
-	BlockID string      `json:"block_id,omitempty"`
-}
-
-type ImageBlock struct {
-	Type     string      `json:"type"`
-	ImageURL string      `json:"image_url"`
-	AltText  string      `json:"alt_text"`
-	Title    *TextObject `json:"title,omitempty"`
-	BlockID  string      `json:"block_id,omitempty"`
 }
 
 type InputBlock struct {
